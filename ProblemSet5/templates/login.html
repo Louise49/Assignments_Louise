@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>国语商配资讯站</title>
+    <meta name="keywords" content="">
+	<meta name="description" content="">
+    <meta name="author" content="国语商配资讯站">
+
+	<!-- Google Fonts -->
+	<link href="http://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic,700itali" rel="stylesheet">
+	<link href="http://fonts.googleapis.com/css?family=Raleway:400,900,800,700,500,200,100,600" rel="stylesheet">
+
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="static/bootstrap/bootstrap.css">
+	<link rel="stylesheet" href="static/css/misc.css">
+	<link rel="stylesheet" href="static/css/red-scheme.css">
+
+	<!-- JavaScripts -->
+	<script src="static/js/jquery-1.10.2.min.js"></script>
+	<script src="static/js/jquery-migrate-1.2.1.min.js"></script>
+
+	<link rel="shortcut icon" href="static/images/favicon.ico" type="image/x-icon" />
+
+</head>
+<body>
+
+	<div class="responsive_menu">
+        <ul class="main_menu">
+            <li><a href="/index">首页</a></li>
+            <li><a href="">简介</a>
+            	<ul>
+								<li><a href="/map">团队一览</a></li>
+								<li><a href="/news">新闻报道</a></li>
+								<li><a href="/image">成员介绍</a></li>
+            	</ul>
+            </li>
+            <li><a href="/blog">活动资讯</a></li>
+            <li><a href="/archives">经验分享</a></li>
+            <li><a href="/chart">积分榜</a></li>
+        </ul> <!-- /.main_menu -->
+    </div> <!-- /.responsive_menu -->
+
+	<header class="site-header clearfix">
+		<div class="container">
+
+			<div class="row">
+
+				<div class="col-md-12">
+
+					<div class="pull-left logo">
+						<a href="index.html">
+							<img src="static/images/logo.png" alt="国语商配资讯站">
+						</a>
+					</div>	<!-- /.logo -->
+
+					<div class="main-navigation pull-right">
+
+						<nav class="main-nav visible-md visible-lg">
+							<ul class="sf-menu">
+								<li class="active"><a href="/index">首页</a></li>
+											<li><a href="#">简介</a>
+												<ul>
+													<li><a href="/map">团队一览</a></li>
+													<li><a href="/news">新闻报道</a></li>
+													<li><a href="/image">成员介绍</a></li>
+					            	</ul>
+					            </li>
+					            <li><a href="/blog">活动资讯</a></li>
+					            <li><a href="/archives">经验分享</a></li>
+					            <li><a href="/chart">积分榜</a></li>
+							</ul> <!-- /.sf-menu -->
+
+						    <ul class="nav navbar-nav navbar-right">
+						      <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> 登入</a></li>
+                              <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span> 登出</a></li>
+                            </ul>
+
+						</nav> <!-- /.main-nav -->
+
+						<!-- This one in here is responsive menu for tablet and mobiles -->
+					    <div class="responsive-navigation visible-sm visible-xs">
+					        <a href="#nogo" class="menu-toggle-btn">
+					            <i class="fa fa-bars"></i>
+					        </a>
+					    </div> <!-- /responsive_navigation -->
+
+					</div> <!-- /.main-navigation -->
+
+				</div> <!-- /.col-md-12 -->
+
+			</div> <!-- /.row -->
+
+		</div> <!-- /.container -->
+	</header> <!-- /.site-header -->
+
+	<div class="first-widget parallax" id="portfolioId">
+		<div class="parallax-overlay">
+			<div class="container pageTitle">
+				<div class="row">
+					<div class="col-md-6 col-sm-6">
+						{% if current_user.is_authenticated %}
+						  <h2 class="page-title">您已登入。</h2>
+						{% else %}
+						  <h2 class="page-title">{{message}}</h2>
+						{% endif %}
+					</div> <!-- /.col-md-6 -->
+					<div class="col-md-6 col-sm-6 text-right">
+						<span class="page-location">登入/登出界面</span>
+					</div> <!-- /.col-md-6 -->
+				</div> <!-- /.row -->
+			</div> <!-- /.container -->
+		</div> <!-- /.parallax-overlay -->
+	</div> <!-- /.pageTitle -->
+
+<div class="container">
+{% if not current_user.is_authenticated %}
+ <center><form class="form-signin" style="width:30%;" method="post" action="/process">
+     <h2 class="form-signin-heading">请输入用户名和密码：</h2>
+     <label for="inputEmail" class="sr-only">用户名</label>
+     <input type="text" name="username" id="username" class="form-control" placeholder="用户名" required autofocus>
+     <label for="inputPassword" class="sr-only">密码</label>
+     <input type="password" name="password" id="inputPassword" class="form-control" placeholder="密码" required>
+     <div class="checkbox">
+       <label>
+         <input type="checkbox" value="remember-me"> 记住我
+       </label>
+     </div>
+     <button class="btn btn-lg btn-primary btn-block" type="submit">登入</button>
+    </form></center>
+{% endif %}
+</div>
+
+	<footer class="site-footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<nav class="footer-nav clearfix">
+						<ul class="footer-menu">
+							<li><a href="index.html">首页</a></li>
+							<li><a href="project-slideshow.html">简介</a></li>
+							<li><a href="blog.html">活动资讯</a></li>
+							<li><a href="archives.html">经验分享</a></li>
+							<li><a href="contact.html">联系本站</a></li>
+						</ul> <!-- /.footer-menu -->
+					</nav> <!-- /.footer-nav -->
+				</div> <!-- /.col-md-12 -->
+			</div> <!-- /.row -->
+			<div class="row">
+				<div class="col-md-12">
+					<p class="copyright-text">Copyright &copy; 2019 国语商配资讯站
+                    | 设计: Louise</p>
+				</div> <!-- /.col-md-12 -->
+			</div> <!-- /.row -->
+		</div> <!-- /.container -->
+	</footer> <!-- /.site-footer -->
+
+	<!-- Scripts -->
+	<script src="static/js/min/plugins.min.js"></script>
+	<script src="static/js/min/medigo-custom.min.js"></script>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</body>
+</html>
